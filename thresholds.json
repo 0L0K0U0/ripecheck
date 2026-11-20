@@ -1,0 +1,13 @@
+{
+  "t_dark": 0.175,
+  "t_orange": 0.35,
+  "t_over": 0.275,
+  "w_red": 0.0,
+  "w_hole": 0.7,
+  "w_edge": 0.3,
+  "s_red": 0.23735469811730092,
+  "s_hole": 0.011348596727108345,
+  "s_edge": 0.32964394817666576,
+  "margin_min": 0.025,
+  "note": "Thresholds and weights selected on the existing real-photo training split (17 of 18 photos passed quality checks)."
+}

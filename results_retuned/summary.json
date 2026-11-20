@@ -1,0 +1,50 @@
+{
+  "n": 18,
+  "per_class": {
+    "unripe": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "support": 6
+    },
+    "ripe": {
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 6
+    },
+    "overripe": {
+      "precision": 0.8,
+      "recall": 0.6666666666666666,
+      "f1": 0.7272727272727272,
+      "support": 6
+    }
+  },
+  "confusion": {
+    "unripe": {
+      "unripe": 3,
+      "ripe": 0,
+      "overripe": 0,
+      "uncertain": 1,
+      "not gradable": 2
+    },
+    "ripe": {
+      "unripe": 0,
+      "ripe": 0,
+      "overripe": 1,
+      "uncertain": 4,
+      "not gradable": 1
+    },
+    "overripe": {
+      "unripe": 0,
+      "ripe": 0,
+      "overripe": 4,
+      "uncertain": 2,
+      "not gradable": 0
+    }
+  },
+  "macro_f1": 0.4646464646464646,
+  "accuracy_all": 0.3888888888888889,
+  "accuracy_graded": 0.875,
+  "coverage": 0.4444444444444444
+}

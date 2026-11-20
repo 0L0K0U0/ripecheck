@@ -1,0 +1,250 @@
+{
+  "summary": {
+    "whole": {
+      "n": 12,
+      "per_class": {
+        "unripe": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889,
+          "support": 4
+        },
+        "ripe": {
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 4
+        },
+        "overripe": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "support": 4
+        }
+      },
+      "confusion": {
+        "unripe": {
+          "unripe": 4,
+          "ripe": 0,
+          "overripe": 0,
+          "uncertain": 0,
+          "not gradable": 0
+        },
+        "ripe": {
+          "unripe": 1,
+          "ripe": 0,
+          "overripe": 1,
+          "uncertain": 2,
+          "not gradable": 0
+        },
+        "overripe": {
+          "unripe": 0,
+          "ripe": 0,
+          "overripe": 3,
+          "uncertain": 1,
+          "not gradable": 0
+        }
+      },
+      "macro_f1": 0.5462962962962963,
+      "accuracy_all": 0.5833333333333334,
+      "accuracy_graded": 0.7777777777777778,
+      "coverage": 0.75
+    },
+    "boxed": {
+      "n": 12,
+      "per_class": {
+        "unripe": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889,
+          "support": 4
+        },
+        "ripe": {
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 4
+        },
+        "overripe": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "support": 4
+        }
+      },
+      "confusion": {
+        "unripe": {
+          "unripe": 4,
+          "ripe": 0,
+          "overripe": 0,
+          "uncertain": 0,
+          "not gradable": 0
+        },
+        "ripe": {
+          "unripe": 1,
+          "ripe": 0,
+          "overripe": 1,
+          "uncertain": 2,
+          "not gradable": 0
+        },
+        "overripe": {
+          "unripe": 0,
+          "ripe": 0,
+          "overripe": 3,
+          "uncertain": 1,
+          "not gradable": 0
+        }
+      },
+      "macro_f1": 0.5462962962962963,
+      "accuracy_all": 0.5833333333333334,
+      "accuracy_graded": 0.7777777777777778,
+      "coverage": 0.75
+    }
+  },
+  "photos": [
+    {
+      "file": "overripe/TestOverripe(3).jpg",
+      "label": "overripe",
+      "box": [
+        0.0,
+        0.01,
+        0.98,
+        0.99
+      ],
+      "whole": "overripe",
+      "boxed": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(5).jpg",
+      "label": "overripe",
+      "box": [
+        0.0,
+        0.05,
+        0.92,
+        0.96
+      ],
+      "whole": "overripe",
+      "boxed": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(7).jpg",
+      "label": "overripe",
+      "box": [
+        0.15,
+        0.01,
+        0.82,
+        0.99
+      ],
+      "whole": "uncertain",
+      "boxed": "uncertain"
+    },
+    {
+      "file": "overripe/TestOverripe(8).jpg",
+      "label": "overripe",
+      "box": [
+        0.21,
+        0.17,
+        0.64,
+        0.87
+      ],
+      "whole": "overripe",
+      "boxed": "overripe"
+    },
+    {
+      "file": "ripe/TestRipe(13).jpg",
+      "label": "ripe",
+      "box": [
+        0.14,
+        0.1,
+        0.81,
+        0.87
+      ],
+      "whole": "unripe",
+      "boxed": "unripe"
+    },
+    {
+      "file": "ripe/TestRipe(20).jpg",
+      "label": "ripe",
+      "box": [
+        0.28,
+        0.05,
+        0.81,
+        0.88
+      ],
+      "whole": "uncertain",
+      "boxed": "uncertain"
+    },
+    {
+      "file": "ripe/TestRipe(23).jpg",
+      "label": "ripe",
+      "box": [
+        0.21,
+        0.06,
+        0.81,
+        0.85
+      ],
+      "whole": "uncertain",
+      "boxed": "uncertain"
+    },
+    {
+      "file": "ripe/TestRipe(26).jpg",
+      "label": "ripe",
+      "box": [
+        0.21,
+        0.04,
+        0.72,
+        0.87
+      ],
+      "whole": "overripe",
+      "boxed": "overripe"
+    },
+    {
+      "file": "unripe/TestUnripe(13).jpg",
+      "label": "unripe",
+      "box": [
+        0.08,
+        0.21,
+        0.94,
+        0.99
+      ],
+      "whole": "unripe",
+      "boxed": "unripe"
+    },
+    {
+      "file": "unripe/TestUnripe(17).JPG",
+      "label": "unripe",
+      "box": [
+        0.18,
+        0.0,
+        0.96,
+        1.0
+      ],
+      "whole": "unripe",
+      "boxed": "unripe"
+    },
+    {
+      "file": "unripe/TestUnripe(24).jpg",
+      "label": "unripe",
+      "box": [
+        0.22,
+        0.13,
+        0.9,
+        0.77
+      ],
+      "whole": "unripe",
+      "boxed": "unripe"
+    },
+    {
+      "file": "unripe/TestUnripe(30).jpg",
+      "label": "unripe",
+      "box": [
+        0.1,
+        0.07,
+        0.79,
+        0.86
+      ],
+      "whole": "unripe",
+      "boxed": "unripe"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>RipeCheck: grade an oil palm bunch from one photo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 52 20" aria-hidden="true"><circle cx="10" cy="10" r="8.5" fill="#3B2552"/><circle cx="26" cy="10" r="8.5" fill="#E2661B"/><circle cx="42" cy="10" r="8.5" fill="#A3261D"/></svg>
+      <div>
+        <h1>RipeCheck</h1>
+        <p>Grade an oil palm fruit bunch from one photo.</p>
+      </div>
+    </div>
+    <nav class="pages" role="tablist" aria-label="Pages">
+      <button role="tab" id="t-grade" aria-selected="true" data-page="grade">Grade a bunch</button>
+      <button role="tab" id="t-views" aria-selected="false" data-page="views">Views of a bunch <span class="count" id="views-count" hidden>0</span></button>
+      <button role="tab" id="t-blocks" aria-selected="false" data-page="blocks">Block planner</button>
+      <button role="tab" id="t-test" aria-selected="false" data-page="test">Test a set</button>
+    </nav>
+  </header>
+
+  <!-- ===================== Grade a bunch ===================== -->
+  <main id="p-grade" class="page grade-page" role="tabpanel" aria-labelledby="t-grade">
+    <section class="bench" aria-label="Photo workbench">
+      <div class="pick">
+        <button class="btn solid" id="btn-camera" type="button">Take a photo</button>
+        <button class="btn" id="btn-file" type="button">Choose a file</button>
+        <input type="file" id="in-camera" accept="image/*" capture="environment" hidden>
+        <input type="file" id="in-file" accept="image/*" hidden>
+      </div>
+      <div class="samples" id="samples" aria-label="Sample photos"></div>
+
+      <p class="hint" id="hint">Pick a sample or take a photo, then drag a box around the whole bunch.</p>
+
+      <div class="stage" id="stage">
+        <canvas id="cv" tabindex="0" aria-label="Photo. Drag to draw a box around the bunch. Arrow keys move the box; shift and arrow keys resize it."></canvas>
+        <div id="viewbox" hidden></div>
+        <div class="empty" id="empty">No photo yet</div>
+        <div class="busy" id="busy" hidden>Grading</div>
+      </div>
+
+      <div class="viewtabs" id="viewtabs" role="tablist" aria-label="Views of the result">
+        <button role="tab" aria-selected="true" data-view="box">Draw box</button>
+        <button role="tab" aria-selected="false" data-view="outline">Outline</button>
+        <button role="tab" aria-selected="false" data-view="colours">Colour map</button>
+        <button role="tab" aria-selected="false" data-view="edges">Edges</button>
+        <button role="tab" aria-selected="false" data-view="compare">Before and after</button>
+        <button role="tab" aria-selected="false" data-view="steps">All steps</button>
+        <button class="linkish" id="btn-reset-box" type="button">Reset box</button>
+      </div>
+
+      <details class="settings">
+        <summary>Settings</summary>
+        <div class="settings-grid">
+          <fieldset>
+            <legend>Cut-out method</legend>
+            <select id="seg-mode" aria-label="Cut-out method"></select>
+            <div id="toggles"></div>
+          </fieldset>
+          <fieldset>
+            <legend>Grading rules</legend>
+            <div id="sliders"></div>
+            <button class="linkish" id="btn-reset-rules" type="button">Reset rules</button>
+          </fieldset>
+        </div>
+      </details>
+    </section>
+
+    <aside class="slip" id="slip" aria-live="polite" aria-label="Grading result">
+      <h2 class="grade" id="grade" data-grade="none">No grade yet</h2>
+      <p class="advice" id="advice">The result appears here.</p>
+      <p class="lean" id="lean" hidden></p>
+
+      <div class="ruler" id="ruler" hidden>
+        <h3>Colour of the bunch</h3>
+        <div class="bar" id="bar" role="img" aria-label="Share of dark, orange, red and other pixels"></div>
+        <ul class="legend" id="legend"></ul>
+      </div>
+
+      <div id="why" hidden>
+        <h3>Why this grade</h3>
+        <ol class="rules" id="rules"></ol>
+      </div>
+
+      <div id="checks-wrap" hidden>
+        <h3>Photo checks</h3>
+        <ul class="checks" id="checks"></ul>
+      </div>
+
+      <p class="error" id="error" role="alert" hidden></p>
+      <div class="actions">
+        <button class="btn solid" id="btn-add" type="button" disabled>Add as a view of this bunch</button>
+      </div>
+      <p class="fine" id="rulenote"></p>
+    </aside>
+  </main>
+
+  <!-- ===================== Views of a bunch ===================== -->
+  <main id="p-views" class="page" role="tabpanel" aria-labelledby="t-views" hidden>
+    <div class="two">
+      <section>
+        <h2>Views of one bunch</h2>
+        <p class="lede">One photo can be unlucky: backlit, shaded or partly hidden. Grade the same bunch from two or three sides, add each photo here, and RipeCheck averages their colour and texture before grading.</p>
+        <ul class="viewlist" id="viewlist"></ul>
+        <p class="empty-note" id="views-empty">No views yet. Grade a photo, then choose “Add as a view of this bunch”.</p>
+        <button class="btn" id="btn-clear-views" type="button" hidden>Start a new bunch</button>
+      </section>
+      <aside class="slip" id="fused" aria-live="polite" aria-label="Combined result">
+        <h2 class="grade" id="fused-grade" data-grade="none">No views</h2>
+        <p class="advice" id="fused-advice">Add a view to see the combined grade.</p>
+        <p class="fine" id="fused-votes"></p>
+        <form class="save" id="save-form">
+          <label for="block-id">Save this bunch to block</label>
+          <div class="row">
+            <input id="block-id" name="block" value="A1" maxlength="12" autocomplete="off">
+            <button class="btn solid" type="submit" id="btn-save" disabled>Save bunch</button>
+          </div>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ===================== Block planner ===================== -->
+  <main id="p-blocks" class="page" role="tabpanel" aria-labelledby="t-blocks" hidden>
+    <h2>Block planner</h2>
+    <p class="lede">Each saved bunch counts towards its block. Blocks with overripe bunches come first, then blocks with the highest share of ripe bunches. This ordering is a simple illustration, not an agronomic rule.</p>
+    <div class="tiles" id="tiles"></div>
+    <p class="empty-note" id="blocks-empty">No bunches saved yet. Grade a bunch, then save it to a block from “Views of a bunch”.</p>
+    <div class="table-wrap"><table id="block-table" hidden>
+      <thead><tr><th>Priority</th><th>Block</th><th>Bunches</th><th>Unripe</th><th>Ripe</th><th>Overripe</th><th>Unsure</th><th>Plan</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+    <div class="actions">
+      <button class="btn" id="btn-export" type="button" disabled>Download CSV</button>
+      <button class="btn" id="btn-clear-blocks" type="button" disabled>Clear all blocks</button>
+    </div>
+  </main>
+
+  <!-- ===================== Test a set ===================== -->
+  <main id="p-test" class="page" role="tabpanel" aria-labelledby="t-test" hidden>
+    <h2>Test a set of photos</h2>
+    <p class="lede">Grade many photos with the settings from the first page. Start file names with <code>unripe_</code>, <code>ripe_</code> or <code>overripe_</code> and RipeCheck scores them against that label. Photos with other names are graded but not scored. The whole photo is used, with no box.</p>
+    <div class="pick">
+      <label class="btn" for="in-batch">Choose photos</label>
+      <input type="file" id="in-batch" accept="image/*" multiple hidden>
+      <button class="btn solid" id="btn-batch" type="button" disabled>Run the test</button>
+      <button class="btn" id="btn-batch-samples" type="button">Use the sample photos</button>
+      <span class="fine" id="batch-count">No photos chosen</span>
+    </div>
+    <p class="error" id="batch-error" role="alert" hidden></p>
+    <div id="batch-out" hidden>
+      <div class="kpis" id="kpis"></div>
+      <div class="table-wrap"><table id="per-class"></table></div>
+      <div class="table-wrap"><table id="confusion"></table></div>
+      <div class="table-wrap"><table id="batch-rows"></table></div>
+    </div>
+  </main>
+</div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

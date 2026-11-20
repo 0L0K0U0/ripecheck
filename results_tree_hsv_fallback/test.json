@@ -1,0 +1,152 @@
+{
+  "training_photos_used": 17,
+  "hsv_training_photos_used": 16,
+  "summary": {
+    "n": 18,
+    "per_class": {
+      "unripe": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "support": 6
+      },
+      "ripe": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571428571428571,
+        "support": 6
+      },
+      "overripe": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      }
+    },
+    "confusion": {
+      "unripe": {
+        "unripe": 4,
+        "ripe": 2,
+        "overripe": 0,
+        "uncertain": 0,
+        "not gradable": 0
+      },
+      "ripe": {
+        "unripe": 0,
+        "ripe": 6,
+        "overripe": 0,
+        "uncertain": 0,
+        "not gradable": 0
+      },
+      "overripe": {
+        "unripe": 0,
+        "ripe": 0,
+        "overripe": 6,
+        "uncertain": 0,
+        "not gradable": 0
+      }
+    },
+    "macro_f1": 0.8857142857142857,
+    "accuracy_all": 0.8888888888888888,
+    "accuracy_graded": 0.8888888888888888,
+    "coverage": 1.0
+  },
+  "photos": [
+    {
+      "file": "unripe/TestUnripe(1).jpg",
+      "label": "unripe",
+      "result": "unripe",
+      "grabcut_result": "not gradable",
+      "fallback": "hsv"
+    },
+    {
+      "file": "unripe/TestUnripe(10).jpg",
+      "label": "unripe",
+      "result": "ripe"
+    },
+    {
+      "file": "unripe/TestUnripe(20).jpg",
+      "label": "unripe",
+      "result": "unripe"
+    },
+    {
+      "file": "unripe/TestUnripe(21).jpg",
+      "label": "unripe",
+      "result": "unripe"
+    },
+    {
+      "file": "unripe/TestUnripe(25).jpg",
+      "label": "unripe",
+      "result": "ripe"
+    },
+    {
+      "file": "unripe/TestUnripe(29).jpg",
+      "label": "unripe",
+      "result": "unripe",
+      "grabcut_result": "not gradable",
+      "fallback": "hsv"
+    },
+    {
+      "file": "ripe/TestRipe(1).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(18).jpg",
+      "label": "ripe",
+      "result": "ripe",
+      "grabcut_result": "not gradable",
+      "fallback": "hsv"
+    },
+    {
+      "file": "ripe/TestRipe(19).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(22).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(25).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(29).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "overripe/TestOverripe(1).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(10).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(13).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(14).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(2).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(4).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    }
+  ]
+}

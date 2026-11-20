@@ -1,0 +1,19 @@
+file,bunch,true,result,quality_checks_failed
+unripe/TestUnripe(1).jpg,test_unripe_1,unripe,not gradable,fruit
+unripe/TestUnripe(10).jpg,test_unripe_10,unripe,uncertain,
+unripe/TestUnripe(20).jpg,test_unripe_20,unripe,unripe,
+unripe/TestUnripe(21).jpg,test_unripe_21,unripe,unripe,
+unripe/TestUnripe(25).jpg,test_unripe_25,unripe,unripe,
+unripe/TestUnripe(29).jpg,test_unripe_29,unripe,not gradable,area/valid/sharp/light/fruit
+ripe/TestRipe(1).jpg,test_ripe_1,ripe,uncertain,
+ripe/TestRipe(18).jpg,test_ripe_18,ripe,not gradable,area/valid/sharp/light/fruit
+ripe/TestRipe(19).jpg,test_ripe_19,ripe,uncertain,
+ripe/TestRipe(22).jpg,test_ripe_22,ripe,uncertain,
+ripe/TestRipe(25).jpg,test_ripe_25,ripe,uncertain,
+ripe/TestRipe(29).jpg,test_ripe_29,ripe,overripe,
+overripe/TestOverripe(1).jpg,test_overripe_1,overripe,overripe,
+overripe/TestOverripe(10).jpg,test_overripe_10,overripe,overripe,
+overripe/TestOverripe(13).jpg,test_overripe_13,overripe,overripe,
+overripe/TestOverripe(14).jpg,test_overripe_14,overripe,uncertain,
+overripe/TestOverripe(2).jpg,test_overripe_2,overripe,overripe,
+overripe/TestOverripe(4).jpg,test_overripe_4,overripe,uncertain,

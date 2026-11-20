@@ -1,0 +1,13 @@
+file,bunch,true,result,quality_checks_failed
+unripe/TestUnripe(13).jpg,unripe/TestUnripe(13).jpg,unripe,unripe,
+unripe/TestUnripe(17).JPG,unripe/TestUnripe(17).JPG,unripe,unripe,
+unripe/TestUnripe(24).jpg,unripe/TestUnripe(24).jpg,unripe,unripe,
+unripe/TestUnripe(30).jpg,unripe/TestUnripe(30).jpg,unripe,unripe,
+ripe/TestRipe(13).jpg,ripe/TestRipe(13).jpg,ripe,unripe,
+ripe/TestRipe(20).jpg,ripe/TestRipe(20).jpg,ripe,uncertain,
+ripe/TestRipe(23).jpg,ripe/TestRipe(23).jpg,ripe,uncertain,
+ripe/TestRipe(26).jpg,ripe/TestRipe(26).jpg,ripe,overripe,
+overripe/TestOverripe(3).jpg,overripe/TestOverripe(3).jpg,overripe,overripe,
+overripe/TestOverripe(5).jpg,overripe/TestOverripe(5).jpg,overripe,overripe,
+overripe/TestOverripe(7).jpg,overripe/TestOverripe(7).jpg,overripe,uncertain,
+overripe/TestOverripe(8).jpg,overripe/TestOverripe(8).jpg,overripe,overripe,

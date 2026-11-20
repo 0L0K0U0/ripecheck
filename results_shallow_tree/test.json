@@ -1,0 +1,145 @@
+{
+  "training_photos_used": 17,
+  "summary": {
+    "n": 18,
+    "per_class": {
+      "unripe": {
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "support": 6
+      },
+      "ripe": {
+        "precision": 0.7142857142857143,
+        "recall": 0.8333333333333334,
+        "f1": 0.7692307692307692,
+        "support": 6
+      },
+      "overripe": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 6
+      }
+    },
+    "confusion": {
+      "unripe": {
+        "unripe": 2,
+        "ripe": 2,
+        "overripe": 0,
+        "uncertain": 0,
+        "not gradable": 2
+      },
+      "ripe": {
+        "unripe": 0,
+        "ripe": 5,
+        "overripe": 0,
+        "uncertain": 0,
+        "not gradable": 1
+      },
+      "overripe": {
+        "unripe": 0,
+        "ripe": 0,
+        "overripe": 6,
+        "uncertain": 0,
+        "not gradable": 0
+      }
+    },
+    "macro_f1": 0.7564102564102564,
+    "accuracy_all": 0.7222222222222222,
+    "accuracy_graded": 0.8666666666666667,
+    "coverage": 0.8333333333333334
+  },
+  "photos": [
+    {
+      "file": "unripe/TestUnripe(1).jpg",
+      "label": "unripe",
+      "result": "not gradable"
+    },
+    {
+      "file": "unripe/TestUnripe(10).jpg",
+      "label": "unripe",
+      "result": "ripe"
+    },
+    {
+      "file": "unripe/TestUnripe(20).jpg",
+      "label": "unripe",
+      "result": "unripe"
+    },
+    {
+      "file": "unripe/TestUnripe(21).jpg",
+      "label": "unripe",
+      "result": "unripe"
+    },
+    {
+      "file": "unripe/TestUnripe(25).jpg",
+      "label": "unripe",
+      "result": "ripe"
+    },
+    {
+      "file": "unripe/TestUnripe(29).jpg",
+      "label": "unripe",
+      "result": "not gradable"
+    },
+    {
+      "file": "ripe/TestRipe(1).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(18).jpg",
+      "label": "ripe",
+      "result": "not gradable"
+    },
+    {
+      "file": "ripe/TestRipe(19).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(22).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(25).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(29).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "overripe/TestOverripe(1).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(10).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(13).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(14).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(2).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(4).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    }
+  ]
+}

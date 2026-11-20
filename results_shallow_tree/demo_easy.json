@@ -1,0 +1,115 @@
+{
+  "training_photos_used": 17,
+  "summary": {
+    "n": 12,
+    "per_class": {
+      "unripe": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      },
+      "ripe": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      },
+      "overripe": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      }
+    },
+    "confusion": {
+      "unripe": {
+        "unripe": 4,
+        "ripe": 0,
+        "overripe": 0,
+        "uncertain": 0,
+        "not gradable": 0
+      },
+      "ripe": {
+        "unripe": 0,
+        "ripe": 4,
+        "overripe": 0,
+        "uncertain": 0,
+        "not gradable": 0
+      },
+      "overripe": {
+        "unripe": 0,
+        "ripe": 0,
+        "overripe": 4,
+        "uncertain": 0,
+        "not gradable": 0
+      }
+    },
+    "macro_f1": 1.0,
+    "accuracy_all": 1.0,
+    "accuracy_graded": 1.0,
+    "coverage": 1.0
+  },
+  "photos": [
+    {
+      "file": "unripe/TestUnripe(13).jpg",
+      "label": "unripe",
+      "result": "unripe"
+    },
+    {
+      "file": "unripe/TestUnripe(17).JPG",
+      "label": "unripe",
+      "result": "unripe"
+    },
+    {
+      "file": "unripe/TestUnripe(24).jpg",
+      "label": "unripe",
+      "result": "unripe"
+    },
+    {
+      "file": "unripe/TestUnripe(30).jpg",
+      "label": "unripe",
+      "result": "unripe"
+    },
+    {
+      "file": "ripe/TestRipe(13).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(20).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(23).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "ripe/TestRipe(26).jpg",
+      "label": "ripe",
+      "result": "ripe"
+    },
+    {
+      "file": "overripe/TestOverripe(3).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(5).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(7).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    },
+    {
+      "file": "overripe/TestOverripe(8).jpg",
+      "label": "overripe",
+      "result": "overripe"
+    }
+  ]
+}
